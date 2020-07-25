@@ -1,0 +1,22 @@
+server:
+    contextPath: /
+    port: 8080
+spring:
+    liquibase:
+      enabled: true
+      change-log: file:./db/changelog/db.changelog-master.yaml
+    datasource:
+        dataSourceClassName: com.mysql.jdbc.jdbc2.optional.MysqlConnectionPoolDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: ${MYSQL-URL}
+        username: ${MYSQL-USER}
+        password: ${MYSQL-PASS}
+    jpa:
+        database-platform: org.hibernate.dialect.MySQL5Dialect
+        database: MySQL
+        openInView: false
+        show_sql: false
+        generate-ddl: false
+        hibernate:
+            ddl-auto: none
+            naming-strategy: org.hibernate.cfg.EJB3NamingStrategy

@@ -1,0 +1,43 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: aman.kachhal99@gmail.com
+      changes:
+        - createTable:
+            tableName: USER_DATA
+            columns:
+              - column:
+                  name: USER_ID
+                  type: int(11)
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: USER_NAME
+                  type: VARCHAR(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: AGE
+                  type: INT(3)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: HEIGHT
+                  type: INT(3)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: GENDER
+                  type: CHAR
+                  constraints:
+                    nullable: false
+              - column:
+                  name: SALE_AMOUNT
+                  type: FLOAT(10,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: LAST_PURCHASE_DATE
+                  type: datetime
