@@ -24,7 +24,7 @@ public class CSVReaderJob {
 
     private final String USER_DATA_FOLDER_PATH = "UserDataFolder//";
     //private final int JOB_EXECUTION_INTERVAL=3600000;
-    private final int JOB_EXECUTION_INTERVAL=10000;
+    private final int JOB_EXECUTION_INTERVAL=120000;
 
     @Scheduled(fixedRate = JOB_EXECUTION_INTERVAL)
     public void processCSVFile() {
