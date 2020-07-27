@@ -5,9 +5,9 @@ This micro service will also monitor a folder for any new CSV file containg the 
 
 # Getting Started
 ## Deliverables:
-Following will be delivered in the build folder as outout of mvn build command.
+Following will be delivered in the build folder as output of mvn build command.
 * Application jar file with name userdatams-0.0.1-SNAPSHOT.jar.
-* DB folder containing the configuration file to create db tables. 
+* DB folder containing the configuration file to create db tables.
 
 ## Build & Setting Pre-Requisites for Application
 * Create DB Schema: 
@@ -57,7 +57,20 @@ Once the application is started following features will be provided by the MS:
 	* Location of the log file will be parallel to location of the jar file from where MS is running with name `logs`.
 	* Log have rotation policy of 10mb. A new file will be created if the size of log file becomes greater to 10mb.
 	* Maximum of 10 files will be kept in the logs folder to prevent over consumption of memory in server.
-		
+## Data Validation Rules
+Following are the validation rules against which the data will be validated.
+* CSV data should be in correct order. No other order will be accepted.
+'USER_NAME,AGE,HEIGHT,GENDER,SALE_AMOUNT,LAST_PURCHASE_DATE'
+* User Name can not be blank.
+* Age can not be blank.
+* Age can not be negitive value.
+* Height can not be blank.
+* Height can not be negitive value.
+* Gender can not be blank.
+* Sale Amount can not be blank.
+* Sale Amount can not be negitive value.
+* Last Purchase Date should be in UTC format `yyyy-MM-dd'T'HH:mm:ss`
+
 ## Guidelines For Usage
 Following are the step to be followed to start the application.
 * Open command prompt on the jar location. 
@@ -78,17 +91,3 @@ For further reference, please consider the following sections:
 * [Spring Data Redis (Access+Driver)](https://docs.spring.io/spring-boot/docs/2.3.1.RELEASE/reference/htmlsingle/#boot-features-redis)
 * [Spring Web](https://docs.spring.io/spring-boot/docs/2.3.1.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications)
 * [Liquibase Migration](https://docs.spring.io/spring-boot/docs/2.3.1.RELEASE/reference/htmlsingle/#howto-execute-liquibase-database-migrations-on-startup)
-
-
-Instruction to deploy.
-remove the getter setter from model class before delivery.
-===============================
-see if we can add any test case. 
-logging should be possible.
-Add comments to all the codes.
-
-if first row has user_name then remove the row from processing. 
-if last row is not enter then what will happen. 
-Create a prod file with DB link. 
-when creating jar file prod db link should be considered. 
-Create a quartz job to get the data from an external server and then call the POST API
