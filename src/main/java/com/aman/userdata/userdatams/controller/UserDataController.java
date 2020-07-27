@@ -31,8 +31,7 @@ public class UserDataController {
             produces = { "application/json" },
             consumes = { "application/text" },
             method = RequestMethod.POST)
-    public ResponseEntity postApplications(
-            @RequestBody String requestData) throws JsonProcessingException {
+    public ResponseEntity postApplications(@RequestBody String requestData) throws JsonProcessingException {
         log.info("Request received for processing the data.");
         log.debug("Recieved Data Request: \n" + requestData);
         try {

@@ -152,7 +152,6 @@
 								</goals>
 								<configuration>
 									<tasks>
-										<echo>Using application-local.properties file</echo>
 										<copy file="src/main/resources/application-local.properties" tofile="${project.build.outputDirectory}/application.properties"/>
 										<copy file="db/changelog/db.changelog-master.yaml" tofile="build/db/changelog/db.changelog-master.yaml"/>
 										<delete file="${project.build.outputDirectory}/application-local.properties"/>
@@ -169,9 +168,6 @@
 			<id>prod</id>
 			<build>
 				<resources>
-					<resource>
-						<directory>db</directory>
-					</resource>
 					<resource>
 						<directory>src/main/resources</directory>
 					</resource>

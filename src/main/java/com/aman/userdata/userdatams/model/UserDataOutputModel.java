@@ -19,20 +19,5 @@ public class UserDataOutputModel implements Serializable {
     @Valid
     private List<UserData> items = new ArrayList<UserData>();
 
-    public PageModel getPage() {
-        return page;
-    }
-
-    public void setPage(PageModel page) {
-        this.page = page;
-    }
-
-    public List<UserData> getItems() {
-        return items;
-    }
-
-    public void setItems(List<UserData> items) {
-        this.items = items;
-    }
 }
 
