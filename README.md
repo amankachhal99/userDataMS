@@ -22,11 +22,19 @@ The following guides illustrate how to use some features concretely:
 * [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
 * [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
 
-### TODO:
-* Should have health check for endpoints.
-* Should have unit test for 1gb data. 
-* 
-
 ### Start Application
 #### Create DB Schema: 
     CREATE SCHEMA `user_data_db` ;
+
+Instruction to deploy.
+remove the getter setter from model class before delivery.
+===============================
+see if we can add any test case. 
+logging should be possible.
+Add comments to all the codes.
+
+if first row has user_name then remove the row from processing. 
+if last row is not enter then what will happen. 
+Create a prod file with DB link. 
+when creating jar file prod db link should be considered. 
+Create a quartz job to get the data from an external server and then call the POST API
