@@ -12,7 +12,7 @@ import java.text.SimpleDateFormat;
 public class UserDataValidator implements Validator {
 
     /**
-     * This Validator validates *just* Person instances
+     * This Validator validates *just* UserData instances
      */
     public boolean supports(Class clazz) {
         return UserData.class.equals(clazz);
