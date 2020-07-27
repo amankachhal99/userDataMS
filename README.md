@@ -57,6 +57,7 @@ Once the application is started following features will be provided by the MS:
 	* Location of the log file will be parallel to location of the jar file from where MS is running with name `logs`.
 	* Log have rotation policy of 10mb. A new file will be created if the size of log file becomes greater to 10mb.
 	* Maximum of 10 files will be kept in the logs folder to prevent over consumption of memory in server.
+
 ## Data Validation Rules
 Following are the validation rules against which the data will be validated.
 * CSV data should be in correct order. No other order will be accepted.
@@ -73,7 +74,8 @@ Following are the validation rules against which the data will be validated.
 
 ## Guidelines For Usage
 Following are the step to be followed to start the application.
-* Open command prompt on the jar location. 
+* For the convinence a build folder has been checked-in as part of the project which contain the build of the MS for local profile. This jar can be used to run the MS locally.https://github.com/amankachhal99/userDataMS/tree/master/build
+* Open command prompt on the jar location.
 * Execute the command to start the jar.
 	`java -jar userdatams-0.0.1-SNAPSHOT.jar`
 * The application should be able to start itself successfully.Look for below log to confirm that application has started successfully.
@@ -81,7 +83,23 @@ Following are the step to be followed to start the application.
 * Log folder parallel to jar location should be created automatically.
 * If `UserDataFolder` is not created then it will be created by MS. 
 
-### Reference Documentation
+## Technical Features
+Project use the following features:
+* Uses Lombak project to create getter and setters. So that its easy and quicker to code in future.
+* Uses Spring scheduler to schedule the job and run it after every 2 min. 
+* Uses liquibase to manage changes in the DB schema.
+* Uses unit test to test the unit features to maintain the quality of the product.
+* Validation framework is included so that any amount of validation can be included easily in the future. 
+* Clean use of MVC model creating a clear bifercation of roles played by controller and service classes.
+* Use of stream object of JAVA 8 for better performance.
+* PMD Tools is used to verify the quality of the project.
+
+## Scope for Improvement
+* Unit test cases can be written in more exhaustive manner to cover the complete code.
+* DB folder created as a deliverable in build folder can be included in the jar file so that it is not tempered by mistake.
+* Performance of the code can be improved further by use of java Threads if the file size if too big to process the data in parallel. 
+
+## Reference Documentation
 For further reference, please consider the following sections:
 
 * [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
