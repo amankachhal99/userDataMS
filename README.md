@@ -24,7 +24,7 @@ Following will be delivered in the build folder as output of mvn build command.
 ## Features of MicroService
 Once the application is started following features will be provided by the MS:
 * Exposed End Points:
-	* POST http://<IP Address or HOSTNAME>:8080/sales/record
+	* POST http://HOST_NAME:8080/sales/record
 		* User can post the CSV format raw data in the body of the request. Sample Data:
 			```
 			USER_NAME,AGE,HEIGHT,GENDER,SALE_AMOUNT,LAST_PURCHASE_DATE
@@ -34,7 +34,7 @@ Once the application is started following features will be provided by the MS:
 			```
 		* The data will be stored in MySQL DB in table USER_DATA in schema USER_DATA_DB.
 		* The data will be validated against the pre-defined rules. The rules are defined in section "Data Validation Rules".
-	* GET http://<IP Address or HOSTNAME>:8080/sales/record
+	* GET http://HOST_NAME:8080/sales/record
 		* User can use this endpoint to fetch the data from database.
 		* This endpoint supports pagination.
 		* This endpoint supports filtering of data by following filters: So following filters can be provided query parameter to fetch the data as per the need
@@ -64,12 +64,12 @@ Following are the validation rules against which the data will be validated.
 'USER_NAME,AGE,HEIGHT,GENDER,SALE_AMOUNT,LAST_PURCHASE_DATE'
 * User Name can not be blank.
 * Age can not be blank.
-* Age can not be negitive value.
+* Age can not be negative value.
 * Height can not be blank.
-* Height can not be negitive value.
+* Height can not be negative value.
 * Gender can not be blank.
 * Sale Amount can not be blank.
-* Sale Amount can not be negitive value.
+* Sale Amount can not be negative value.
 * Last Purchase Date should be in UTC format `yyyy-MM-dd'T'HH:mm:ss`
 
 ## Guidelines For Usage
@@ -96,6 +96,7 @@ Project use the following features:
 
 ## Scope for Improvement
 * Unit test cases can be written in more exhaustive manner to cover the complete code.
+* More data validation can be done to make the MS robust.
 * DB folder created as a deliverable in build folder can be included in the jar file so that it is not tempered by mistake.
 * Performance of the code can be improved further by use of java Threads if the file size if too big to process the data in parallel. 
 
